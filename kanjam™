@@ -4,6 +4,8 @@
 org=$1
 pattern=${2:-$org}
 
+echo "You have no friends"
+
 repos=$(curl -s https://api.github.com/orgs/$org/repos | jq -r '.[].clone_url')
 
 for repo in $repos
